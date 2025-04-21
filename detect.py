@@ -48,7 +48,8 @@ def detect_intrusion(packet):
 
 def start_sniffing():
     print("Starting packet sniffing... (Press Ctrl+C to stop)")
-    sniff(filter="tcp", prn=detect_intrusion, store=0)
+    sniff(filter="tcp and dst host 10.0.2.15", prn=detect_intrusion, store=0)
+
 
 if __name__ == "__main__":
     start_sniffing()
